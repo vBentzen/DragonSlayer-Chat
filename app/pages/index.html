@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="dragonSlayerChat">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bloc Base Project</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+  <ui-view></ui-view>
+
+
+  <!-- Angular -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+  <!-- UiRouter -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDEZrqjyJAnE3qFZ7Zq94EI_Es-ZK9ja-k",
+      authDomain: "dragonslayer-chat.firebaseapp.com",
+      databaseURL: "https://dragonslayer-chat.firebaseio.com",
+      storageBucket: "dragonslayer-chat.appspot.com",
+      messagingSenderId: "755027600481"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="/scripts/app.js"></script>
+</body>
+</html>
