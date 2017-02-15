@@ -1,9 +1,9 @@
 (function() {
   function HomeCtrl(Room) {
-    
+    this.room = Room.all;
   }
 
   angular
   .module('dragonSlayerChat')
-  .controller('HomeCtrl', HomeCtrl);
+  .controller('HomeCtrl', ['Room', HomeCtrl]);
 })();
