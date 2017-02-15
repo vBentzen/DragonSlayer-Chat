@@ -1,6 +1,9 @@
 <div class="chatSidebar">
-  <h1>Chat for DragonSlayers</h1>
-  <ul class="removeBullet">
+  <div class="container">
+  <h1>DS Chat</h1>
+  <button>New Room</button>
+  <ul class="clearfix roomLiStyle">
     <li class="roomLiStyle" ng-repeat="room in home.room">{{ room.$value }}</li>
   </ul>
+  </div>
 <div>

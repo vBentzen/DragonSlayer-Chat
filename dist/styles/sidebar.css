@@ -1,0 +1,29 @@
+.container {
+  padding-left: 20%;
+}
+
+.roomLiStyle {
+  font-size: 1.2rem;
+  padding: 0.2rem;
+  color:#262626;
+}
+
+.chatSidebar {
+  background-color:#d9d9d9;
+  max-width: 30%;
+  min-height: 100%;
+}
+
+.chatSidebar h1 {
+  float: left;
+}
+
+.chatSidebar button {
+  background-color: #F0F8FF;
+  margin-left: 6%;
+  margin-top: 6%;
+  padding: 3% 4%;
+  float: left;
+  border: 0.1rem;
+  border-radius: 5px;
+}
