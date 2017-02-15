@@ -1,5 +1,6 @@
-<h1>Home Page</h1>
-<ul>
-  <li  ng-repeat="$id in Room.all">{{ home.room.$id }}</li>
-  <li>what</li>
-</ul>
+<div class="chatSidebar">
+  <h1>Chat for DragonSlayers</h1>
+  <ul class="removeBullet">
+    <li class="roomLiStyle" ng-repeat="room in home.room">{{ room.$id }}</li>
+  </ul>
+<div>
