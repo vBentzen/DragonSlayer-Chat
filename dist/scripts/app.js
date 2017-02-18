@@ -11,8 +11,9 @@
         controller: 'HomeCtrl as home',
         templateUrl: '/templates/home.html'
       });
+      
   }
   angular
-  .module('dragonSlayerChat', ['ui.router', 'firebase'])
+  .module('dragonSlayerChat', ['ui.router', 'firebase', 'ui.bootstrap'])
   .config(config);
 })();

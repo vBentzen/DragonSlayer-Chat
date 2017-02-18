@@ -10,9 +10,8 @@
 }
 
 .chatSidebar {
-  background-color:#d9d9d9;
-  max-width: 30%;
   min-height: 100%;
+  background-color:#d9d9d9;
 }
 
 .chatSidebar h1 {
@@ -20,11 +19,9 @@
 }
 
 .chatSidebar button {
-  background-color: #F0F8FF;
-  margin-left: 6%;
-  margin-top: 6.5%;
-  padding: 3% 4%;
-  float: left;
+  margin-top: 0.8rem;
+  margin-left: 1rem;
+  padding: 0.5rem 0.6rem;
   border: 0.1rem;
   border-radius: 5px;
 }

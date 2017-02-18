@@ -11,8 +11,33 @@ html {
 
 body {
 font-family: 'Open Sans';
+height:100%;
 min-height: 100%;         /* says the height of the body must be, at minimum, 100% of the window */
 }
+
+/*medium n' small screens ( smaller tablets and bigger pones)*/
+@media (min-width: 640px) {
+	html { font-size: 112%; }
+
+	.column {
+		float: left;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.column.full { width: 100%; }
+	.column.two-thirds { width: 66.7%; }
+	.column.half { width: 50%; }
+	.column.third { width: 33.3%; }
+	.column.fourth { width: 25%; }
+	.column.fifth { width: 20%; }
+	.column.flow-opposite { float: right; }
+}
+
+/* large screens (both laptops and tablets )*/
+@media (min-width: 1024px) {
+	html { font-size: 112%; }
+
 
 .clearfix{
    clear: both;

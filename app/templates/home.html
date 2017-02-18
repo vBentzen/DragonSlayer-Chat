@@ -1,9 +1,12 @@
-<div class="chatSidebar">
-  <div class="container">
+<div class="column fifth chatSidebar">
   <h1>DS Chat</h1>
-  <button>New Room</button>
+
+<div class="righty" ng-include="'/templates/createRoomModal.html'">
+</div>
+
+  <!-- End of createroomModal-->
+
   <ul class="clearfix roomLiStyle">
     <li class="roomLiStyle" ng-repeat="room in home.room">{{ room.$value }}</li>
   </ul>
-  </div>
-<div>
+  <div>
