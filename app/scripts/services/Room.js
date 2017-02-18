@@ -8,9 +8,9 @@
       all: rooms
     };
 
-var addRoom = function() {
-  rooms.$add({ foo: "bar" }).then(function(ref) {
-  var id = ref.key;
+Room.addRoom = function() {
+  rooms.$add({ /*Want our model.input here*/ }).then(function(ref) {
+  let id = ref.key;
   console.log("added record with id " + id);
   rooms.$indexFor(id); // returns location in the array
 })
