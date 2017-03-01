@@ -1,6 +1,6 @@
 (function() {
-  var vm = this;
   function Room($firebaseArray) {
+    var vm = this;
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
 

@@ -14,7 +14,18 @@
 <body>
 
 
+  <div class="column fifth chatSidebar" ng-controller="HomeCtrl as home">
+    <h1>DS Chat</h1>
+  <div class="righty" ng-include="'/templates/createRoomModal.html'">
+  </div>
 
+    <!-- End of createroomModal-->
+
+    <ul class="clearfix roomLiStyle">
+      <li class="roomLiStyle" ng-repeat="room in home.room"><a ui-sref="roomChat">{{ room.$value }}</a></li>
+    </ul>
+  </div>
+</div>
 
   <ui-view></ui-view>
 
@@ -43,8 +54,10 @@
   </script>
   <script src="/scripts/app.js"></script>
   <script src="/scripts/services/Room.js"></script>
+  <script src="/scripts/services/Message.js"></script>
   <script src="/scripts/services/UserService.js"></script>
   <script src="/scripts/controllers/HomeCtrl.js"></script>
+  <script src="/scripts/controllers/MessageCtrl.js"></script>
   <script src="/scripts/controllers/CreateRoomModalCtrl.js"></script>
   <script src="/scripts/controllers/RoomModalToggleCtrl.js"></script>
 

@@ -10,6 +10,11 @@
         url: '/',
         controller: 'HomeCtrl as home',
         templateUrl: '/templates/home.html'
+      })
+      .state('roomChat', {
+        url: '/',
+        controller: 'MessageCtrl as chat',
+        templateUrl: '/templates/roomChat.html'
       });
 
   }
