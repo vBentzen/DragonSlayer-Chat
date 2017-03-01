@@ -1,4 +1,4 @@
-<div ng-controller="CreateRoomCtrl as $ctrl" class="createRoomHolder">
+<div ng-controller="CreateRoomCtrl as vm" class="createRoomHolder">
   <script type="text/ng-template" id="createRoomModal.html">
 
 
@@ -8,17 +8,18 @@
 
 
     <div class="modal-body" id="modal-body">
-      <input type="text" class="form-control" placeholder="Enter new room name" >
+      <input type="text" class="form-control" ng-model="vm.newRoomName" placeholder="Enter new room name" >
     </div>
 
+
     <div class="modal-footer">
-      <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
-      <button class="btn btn-primary" type="button" ng-click="$ctrl.create()">Create room</button>
+      <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+      <button class="btn btn-primary" type="button" ng-click="vm.create(vm.newRoomName)">Create room</button>
     </div>
 
 
   </script>
 
-  <button class="btn btn-primary" type="button" ng-click="$ctrl.open('sm')">Create room</button>
+  <button class="btn btn-primary" type="button" ng-click="vm.open('sm')">Create room</button>
 
 </div>

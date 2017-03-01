@@ -1,57 +1,57 @@
 
 angular.module('dragonSlayerChat').controller('ModalDemoCtrl', function ($uibModal, $log, $document) {
-  var $ctrl = this;
-  $ctrl.items = ['item1', 'item2', 'item3'];
+  var vm = this;
+  vm.items = ['item1', 'item2', 'item3'];
 
-  $ctrl.animationsEnabled = true;
+  vm.animationsEnabled = true;
 
-  $ctrl.open = function (size, parentSelector) {
+  vm.open = function (size, parentSelector) {
     var parentElem = parentSelector ?
       angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
     var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       ariaLabelledBy: 'modal-title',
       ariaDescribedBy: 'modal-body',
       templateUrl: 'myModalContent.html',
       controller: 'ModalInstanceCtrl',
-      controllerAs: '$ctrl',
+      controllerAs: 'vm',
       size: size,
       appendTo: parentElem,
       resolve: {
         items: function () {
-          return $ctrl.items;
+          return vm.items;
         }
       }
     });
 
     modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
+      vm.selected = selectedItem;
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
 
-  $ctrl.openComponentModal = function () {
+  vm.openComponentModal = function () {
     var modalInstance = $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       component: 'modalComponent',
       resolve: {
         items: function () {
-          return $ctrl.items;
+          return vm.items;
         }
       }
     });
 
     modalInstance.result.then(function (selectedItem) {
-      $ctrl.selected = selectedItem;
+      vm.selected = selectedItem;
     }, function () {
       $log.info('modal-component dismissed at: ' + new Date());
     });
   };
 
-  $ctrl.openMultipleModals = function () {
+  vm.openMultipleModals = function () {
     $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       ariaLabelledBy: 'modal-title-bottom',
       ariaDescribedBy: 'modal-body-bottom',
       templateUrl: 'stackedModal.html',
@@ -62,7 +62,7 @@ angular.module('dragonSlayerChat').controller('ModalDemoCtrl', function ($uibMod
     });
 
     $uibModal.open({
-      animation: $ctrl.animationsEnabled,
+      animation: vm.animationsEnabled,
       ariaLabelledBy: 'modal-title-top',
       ariaDescribedBy: 'modal-body-top',
       templateUrl: 'stackedModal.html',
@@ -73,8 +73,8 @@ angular.module('dragonSlayerChat').controller('ModalDemoCtrl', function ($uibMod
     });
   };
 
-  $ctrl.toggleAnimation = function () {
-    $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
+  vm.toggleAnimation = function () {
+    vm.animationsEnabled = !vm.animationsEnabled;
   };
 });
 
@@ -82,17 +82,17 @@ angular.module('dragonSlayerChat').controller('ModalDemoCtrl', function ($uibMod
 // It is not the same as the $uibModal service used above.
 
 angular.module('dragonSlayerChat').controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
-  var $ctrl = this;
-  $ctrl.items = items;
-  $ctrl.selected = {
-    item: $ctrl.items[0]
+  var vm = this;
+  vm.items = items;
+  vm.selected = {
+    item: vm.items[0]
   };
 
-  $ctrl.ok = function () {
-    $uibModalInstance.close($ctrl.selected.item);
+  vm.ok = function () {
+    $uibModalInstance.close(vm.selected.item);
   };
 
-  $ctrl.cancel = function () {
+  vm.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };
 });
@@ -107,21 +107,21 @@ angular.module('dragonSlayerChat').component('modalComponent', {
     dismiss: '&'
   },
   controller: function () {
-    var $ctrl = this;
+    var vm = this;
 
-    $ctrl.$onInit = function () {
-      $ctrl.items = $ctrl.resolve.items;
-      $ctrl.selected = {
-        item: $ctrl.items[0]
+    vm.$onInit = function () {
+      vm.items = vm.resolve.items;
+      vm.selected = {
+        item: vm.items[0]
       };
     };
 
-    $ctrl.ok = function () {
-      $ctrl.close({$value: $ctrl.selected.item});
+    vm.ok = function () {
+      vm.close({$value: vm.selected.item});
     };
 
-    $ctrl.cancel = function () {
-      $ctrl.dismiss({$value: 'cancel'});
+    vm.cancel = function () {
+      vm.dismiss({$value: 'cancel'});
     };
   }
 });
