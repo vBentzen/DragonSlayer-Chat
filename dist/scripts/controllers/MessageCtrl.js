@@ -1,9 +1,9 @@
 (function() {
-  function MessageCtrl(Message) {
-    this.message = Message.getByRoomId;
+  function MessageCtrl(Message, $stateParams) {
+    this.messages = Message.getByRoomId($stateParams.roomId);
   }
 
   angular
   .module('dragonSlayerChat')
-  .controller('MessageCtrl', ['Message', MessageCtrl]);
+  .controller('MessageCtrl', ['Message', '$stateParams', MessageCtrl]);
 })();

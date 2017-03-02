@@ -22,7 +22,7 @@
     <!-- End of createroomModal-->
 
     <ul class="clearfix roomLiStyle">
-      <li class="roomLiStyle" ng-repeat="room in home.room"><a ui-sref="roomChat">{{ room.$value }}</a></li>
+      <li class="roomLiStyle" ng-repeat="room in home.room"><a ui-sref="roomChat({roomId: room.$id})">{{ room.$value }}</a></li>
     </ul>
   </div>
 </div>

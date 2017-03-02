@@ -12,7 +12,7 @@
         templateUrl: '/templates/home.html'
       })
       .state('roomChat', {
-        url: '/',
+        url: '/room/:roomId',
         controller: 'MessageCtrl as chat',
         templateUrl: '/templates/roomChat.html'
       });
