@@ -26,6 +26,10 @@
   </div>
 
   <ui-view></ui-view>
+  <div class="column eighty newMessage removemarpad">
+    <input type="text" class="messageStyle" ng-model="vm.newRoomMessage" placeholder="Enter Message">
+    <button class="messageBtnSend" type="button" ng-click="vm.send(vm.newRoomMessage)">Send</button>
+  </div>
 
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
