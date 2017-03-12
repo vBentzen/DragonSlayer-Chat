@@ -26,6 +26,7 @@ min-height: 100%;         /* says the height of the body must be, at minimum, 10
 	}
 
 	.column.full { width: 100%; }
+	.column.eighty { width: 80%; }
 	.column.seven-five { width: 75%; }
 	.column.two-thirds { width: 66.7%; }
 	.column.half { width: 50%; }
@@ -34,6 +35,7 @@ min-height: 100%;         /* says the height of the body must be, at minimum, 10
 	.column.fifth { width: 20%; }
 	.column.flow-opposite { float: right; }
 }
+
 
 /* large screens (both laptops and tablets )*/
 @media (min-width: 1024px) {
@@ -46,4 +48,5 @@ min-height: 100%;         /* says the height of the body must be, at minimum, 10
 
 .removeBullet {
   list-style-type: none;
+}
 }

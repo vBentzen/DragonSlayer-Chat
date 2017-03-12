@@ -1,6 +1,44 @@
 .roomMessages {
-  background-color: grey;
   padding-top:1rem;
   height:100%;
-  font-size:1.2rem;
+  font-size:1rem;
+}
+
+.fillwidth {
+  width: 90%;
+  margin-left: 5%;
+  background-color:grey;
+  border-color: grey;
+  margin-bottom: 0.5rem;
+}
+
+.fillwidth:hover {
+  background-color:grey;
+  border-color: black;
+}
+.goRight p {
+  float:right;
+  padding-right: 0.2rem;
+
+}
+
+.odd {
+background-color: #F0F8FF;
+}
+
+.noPad {
+  padding: 0;
+}
+
+.pad {
+  padding-left: 1.5rem;
+}
+
+.chatMessageEa {
+  padding: 0.6rem;
+}
+
+.bolda {
+  font-weight: bold;
+  font-size:1.1rem;
 }

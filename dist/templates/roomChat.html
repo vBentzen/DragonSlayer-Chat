@@ -1,10 +1,12 @@
-<div class="column seven-five roomMessages">
-  <table class="chatMessage">
-    <th><tr>{{ room.$value }}</tr></th>
-   <tr ng-repeat="message in chat.messages">
-    <td>{{ message.username}}</td>
-    <td>{{ message.value }}</td>
-  </tr>
-</table>
-  <h1>DS Chat</h1>
+<div class="column eighty roomMessages noPad">
+  <h2 class="pad">DragonSlayerHub</h1>
+  <div class="chatMessage" ng-repeat="message in chat.messages">
+    <div class="column full chatMessageEa" ng-class-odd="'odd'" ng-class-even="'even'">
+    <div class="column seven-five">
+      <p class="bolda">{{ message.username}} </p>
+      <p>{{ message.content }}</p>
+    </div>
+    <div class="column fourth goRight"><p>{{ message.sentAt }}</p></div>
+    </div>
+  </div>
 </div>

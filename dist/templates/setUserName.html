@@ -1,0 +1,23 @@
+
+<div ng-controller="SetUserNameModalCtrl as vm" class="createRoomHolder">
+  <script type="text/ng-template" id="setUserName.html">
+
+
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-title">Set User Name</h3>
+      <p>Will be used to send messages</p>
+    </div>
+
+
+    <div class="modal-body" id="modal-body">
+      <input type="text" class="form-control" ng-model="vm.newRoomName" placeholder="Enter new room name" >
+    </div>
+
+
+    <div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="vm.create(vm.newRoomName)">Create room</button>
+    </div>
+
+
+  </script>
+</div>

@@ -2,6 +2,7 @@ function CreateRoomModalCtrl ($uibModalInstance, Room, UserService) {
 
   var vm = this;
 
+
   vm.create = function (newRoomName) {
     $uibModalInstance.close();
     addNewRoom(newRoomName);

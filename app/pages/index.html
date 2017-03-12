@@ -18,14 +18,12 @@
     <h1>DS Chat</h1>
   <div class="righty" ng-include="'/templates/createRoomModal.html'">
   </div>
-
     <!-- End of createroomModal-->
 
     <ul class="clearfix roomLiStyle">
       <li class="roomLiStyle" ng-repeat="room in home.room"><a ui-sref="roomChat({roomId: room.$id})">{{ room.$value }}</a></li>
     </ul>
   </div>
-</div>
 
   <ui-view></ui-view>
 
@@ -41,6 +39,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+  <!-- Angular cookies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
   <script>
     // Initialize Firebase
     var config = {
@@ -53,6 +53,8 @@
     firebase.initializeApp(config);
   </script>
   <script src="/scripts/app.js"></script>
+  <script src="/scripts/controllers/SetUserNameModalCtrl.js"></script>
+  <script src="/scripts/controllers/DsChatCookies.js"></script>
   <script src="/scripts/services/Room.js"></script>
   <script src="/scripts/services/Message.js"></script>
   <script src="/scripts/services/UserService.js"></script>

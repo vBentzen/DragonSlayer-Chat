@@ -19,6 +19,6 @@
 
   }
   angular
-  .module('dragonSlayerChat', ['ui.router', 'firebase', 'ui.bootstrap'])
+  .module('dragonSlayerChat', ['ui.router', 'firebase', 'ui.bootstrap', 'ngCookies'])
   .config(config);
 })();
