@@ -1,18 +1,17 @@
-function CreateRoomModalCtrl ($uibModalInstance, Room, UserService) {
+function CreateRoomModalCtrl ($uibModalInstance, Room) {
 
-  var vm = this;
+   var vm = this;
 
+   vm.create = function (newRoomName) {
+     $uibModalInstance.close();
+     addNewRoom(newRoomName);
+   };
 
-  vm.create = function (newRoomName) {
-    $uibModalInstance.close();
-    addNewRoom(newRoomName);
-  };
+   vm.cancel = function () {
+     $uibModalInstance.dismiss('cancel');
+   };
+ }
 
-  vm.cancel = function () {
-    $uibModalInstance.dismiss('cancel');
-  };
-}
-
-angular
-.module('dragonSlayerChat')
-.controller('CreateRoomModalCtrl',['$uibModalInstance', 'Room', CreateRoomModalCtrl]);
+ angular
+ .module('dragonSlayerChat')
+ .controller('CreateRoomModalCtrl',['$uibModalInstance', 'Room', CreateRoomModalCtrl]);

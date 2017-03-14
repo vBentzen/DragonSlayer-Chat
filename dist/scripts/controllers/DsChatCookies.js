@@ -21,7 +21,6 @@
        '</div>'
        ].join(''),
        backdrop: 'static',
-       size: 'md'
       });
     }
   }

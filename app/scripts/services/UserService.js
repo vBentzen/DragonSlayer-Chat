@@ -1,12 +1,9 @@
 function UserService () {
-  var vm = this;
-
-
-  vm.sayGoodbye = function () {
+  this.create = function (name) {
     console.log('hej');
   };
 }
 
 angular
   .module('dragonSlayerChat')
-  .service('UserService', [UserService]);
+  .service('UserService', UserService);

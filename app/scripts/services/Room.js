@@ -1,6 +1,6 @@
 (function() {
-  function Room($firebaseArray) {
-    var vm = this;
+  var vm = this;
+  function Room($firebaseArray) {  
     var ref = firebase.database().ref().child("rooms");
     var rooms = $firebaseArray(ref);
 
@@ -10,7 +10,7 @@
         console.log("added record with id " + id);
         rooms.$indexFor(id); // returns location in the array
       });
-};
+    };
 
     return {
       all: rooms
