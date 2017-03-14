@@ -13,8 +13,8 @@
   </div>
 
 <div ng-controller="sendMessageCtrl as vm" class="newMessage removemarpad">
-  <input type="text" class="messageStyle" ng-model="vm.newRoomMessage" placeholder="Write your message here...">
-  <button class="messageBtnSend" type="button" ng-click="vm.sendIt(vm.newRoomMessage)">Send</button>
+  <input type="text" class="messageStyle" ng-model="vm.newRoomMessage" placeholder="Write your message here..." ng-keyup="vm.checkKey(chat.currentRoomId, $event)">
+  <button class="messageBtnSend" type="button" ng-click="vm.sendIt(vm.newRoomMessage, chat.currentRoomId)">Send</button>
 </div>
 
 

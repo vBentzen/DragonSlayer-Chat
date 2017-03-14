@@ -1,19 +1,23 @@
 (function() {
-  function Message($firebaseArray) {
-    var vm = this;
+  var vm = this;
+  function Message($firebaseArray, $cookies) {
     var ref = firebase.database().ref().child("messages");
     var messages = $firebaseArray(ref);
 
-vm.sender = function (newMessage) {
-  console.log(newMessage)
-}
+
 
     return {
       getByRoomId: function (roomId) {
         // Filter the messages by their room ID.
         return $firebaseArray(ref.orderByChild("roomId").equalTo(roomId));
       },
-      send: function(newMessage) {
+      send: function(newMessage, roomId) {
+        var currentUser = $cookies.get('dsChatCurrentUser');
+        messages.$add({roomId: roomId, username: currentUser, content: newMessage, sentAt: '12:45 am'  }).then(function(ref) {
+          var id = ref.key;
+          console.log("added Message with id " + id + 'messageIs: ' + newMessage);
+          messages.$indexFor(id); // returns location in the array
+        });
       }
     };
 
@@ -21,5 +25,5 @@ vm.sender = function (newMessage) {
 
   angular
     .module('dragonSlayerChat')
-    .factory('Message', ['$firebaseArray', Message]);
+    .factory('Message', ['$firebaseArray', '$cookies', Message]);
 })();

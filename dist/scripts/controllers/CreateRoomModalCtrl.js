@@ -1,4 +1,4 @@
-function CreateRoomModalCtrl ($uibModalInstance, Room, UserService) {
+function CreateRoomModalCtrl ($uibModalInstance, Room) {
 
   var vm = this;
 
