@@ -2,6 +2,7 @@
   function sendMessageCtrl (Message) {
 
     var vm = this;
+    
 
     vm.sendIt = function (newMessage, roomId) {
       Message.send(newMessage, roomId);

@@ -1,5 +1,8 @@
 (function() {
   var vm = this;
+    var result = new Date();
+    var t = result.getHours() + ':' + result.getMinutes();
+    console.log(result)
   function Message($firebaseArray, $cookies) {
     var ref = firebase.database().ref().child("messages");
     var messages = $firebaseArray(ref);
@@ -13,7 +16,7 @@
       },
       send: function(newMessage, roomId) {
         var currentUser = $cookies.get('dsChatCurrentUser');
-        messages.$add({roomId: roomId, username: currentUser, content: newMessage, sentAt: '12:45 am'  }).then(function(ref) {
+        messages.$add({roomId: roomId, username: currentUser, content: newMessage, sentAt: t}).then(function(ref) {
           var id = ref.key;
           console.log("added Message with id " + id + 'messageIs: ' + newMessage);
           messages.$indexFor(id); // returns location in the array

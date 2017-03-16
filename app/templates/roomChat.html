@@ -1,8 +1,8 @@
 <div class="column eighty roomMessages noPad">
 
-
-  <h2 class="pad">DragonSlayerHub</h1>
-  <div class="chatMessage" ng-repeat="message in chat.messages">
+<div class="chatMessage">
+  <h2 ng-controller="MessageCtrl as vm" class="pad">{{vm.currentRoomId}}</h2>
+  <div ng-repeat="message in chat.messages">
     <div class="column full chatMessageEa" ng-class-odd="'odd'" ng-class-even="'even'">
     <div class="column seven-five">
       <p class="bolda">{{ message.username}} </p>
@@ -11,6 +11,7 @@
     <div class="column fourth goRight"><p>{{ message.sentAt }}</p></div>
     </div>
   </div>
+</div>
 
 <div ng-controller="sendMessageCtrl as vm" class="newMessage removemarpad">
   <input type="text" class="messageStyle" ng-model="vm.newRoomMessage" placeholder="Write your message here..." ng-keyup="vm.checkKey(chat.currentRoomId, $event)">

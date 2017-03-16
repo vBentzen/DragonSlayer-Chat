@@ -5,6 +5,11 @@
   position: relative;
 }
 
+.chatMessage {
+    overflow: scroll;
+    height:93%
+}
+
 .roomMessagesChat {
   background-color: red;
 }
@@ -73,10 +78,12 @@ background-color: #F0F8FF;
 
 .pad {
   padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .chatMessageEa {
   padding: 0.6rem;
+    overflow: scroll;
 }
 
 .bolda {
