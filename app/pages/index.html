@@ -21,11 +21,12 @@
     <!-- End of createroomModal-->
 
     <ul class="clearfix roomLiStyle">
-      <li class="roomLiStyle" ng-repeat="room in home.room"><a ui-sref="roomChat({roomId: room.$id})">{{ room.$value }}</a></li>
+      <li class="roomLiStyle" ng-repeat="room in home.room"><a ui-sref="roomChat({roomName: room.$value, roomId: room.$id})">{{ room.$value }}</a></li>
     </ul>
   </div>
 
   <ui-view></ui-view>
+
 
   <!-- Angular -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -57,6 +58,7 @@
   <script src="/scripts/services/Message.js"></script>
   <script src="/scripts/controllers/HomeCtrl.js"></script>
   <script src="/scripts/controllers/MessageCtrl.js"></script>
+  <script src="/scripts/controllers/sendMessageCtrl.js"></script>
   <script src="/scripts/controllers/CreateRoomModalCtrl.js"></script>
   <script src="/scripts/controllers/RoomModalToggleCtrl.js"></script>
   <script src="/scripts/controllers/SetUserNameModalCtrl.js"></script>
