@@ -1,7 +1,7 @@
 <div class="column eighty roomMessages noPad">
 
 <div class="chatMessage">
-  <h2 ng-controller="MessageCtrl as vm" class="pad">{{vm.currentRoomId}}</h2>
+  <h2 ng-controller="MessageCtrl as vm" class="pad">{{vm.currentRoomName}}</h2>
   <div ng-repeat="message in chat.messages">
     <div class="column full chatMessageEa" ng-class-odd="'odd'" ng-class-even="'even'">
     <div class="column seven-five">
